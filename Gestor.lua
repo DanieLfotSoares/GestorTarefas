@@ -66,14 +66,14 @@ end
 
 local function removerTarefa(tarefas,numeroTarefa)
     if numeroTarefa < 1 or numeroTarefa > #tarefas then
-        print("Número de tarefa inválido.");
+        print("Numero de tarefa invalido.");
     else
         table.remove(tarefas, numeroTarefa);
         print("Tarefa removida com sucesso!");
     end
 end
 local function printComandos()
-    print("Comandos disponíveis:");
+    print("Comandos disponiveis:");
     print("1. Adicionar tarefa");
     print("2. Listar tarefas");
     print("3. Concluir tarefa");
@@ -99,7 +99,7 @@ local function main()
     if #tarefas > 0 then
         print("Carregadas " .. #tarefas .. " tarefas salvas.")
     else
-        print("Nenhuma tarefa encontrada. Começando com lista vazia.")
+        print("Nenhuma tarefa encontrada. Comecando com lista vazia.")
     end;
     
     while true do
@@ -110,7 +110,7 @@ local function main()
         if opcao == "1" then
             print("Digite o nome da tarefa: ");
             local nome = io.read();
-            print("Digite a descrição da tarefa: ");
+            print("Digite a descricao da tarefa: ");
             local descricao = io.read();
             print("Digite a prioridade da tarefa (1-5): ");
             local prioridade = tonumber(io.read());
@@ -122,13 +122,13 @@ local function main()
             listarTarefas(tarefas);
         elseif opcao == "3" then
             listarTarefas(tarefas);
-            print("Digite o número da tarefa a concluir: ");
+            print("Digite o numero da tarefa a concluir: ");
             local numeroTarefa = tonumber(io.read());
             concluirTarefa(tarefas, numeroTarefa);
             salvarTarefas(tarefas, "tarefasLua.txt"); -- Auto-salvar
         elseif opcao == "4" then
             listarTarefas(tarefas);
-            print("Digite o número da tarefa a remover: ");
+            print("Digite o numero da tarefa a remover: ");
             local numeroTarefa = tonumber(io.read());
             removerTarefa(tarefas, numeroTarefa);
             salvarTarefas(tarefas, "tarefasLua.txt"); -- Auto-salvar
