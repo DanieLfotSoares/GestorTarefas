@@ -143,9 +143,8 @@ local function main()
             break;       
         end
         os.execute("timeout /t 2 >nul")
-        print(""); -- Linha em branco para melhor legibilidade
+        print("");
     end
 end
 
--- Chama a função principal
 main()
